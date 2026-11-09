@@ -1,7 +1,7 @@
-# Hospital Management System Database Design
+# MIVACARE HOSPITAL Management System Database Design
 
 ## Introduction
-This project models a hospital management database designed to store and manage key operational data such as departments, doctors, patients, appointments, and billing. The database supports essential hospital activities like appointment scheduling, clinical staff assignment, and payment tracking.
+This project models a MIVACARE HOSPITAL management database designed to store and manage key operational data such as departments, doctors, patients, appointments, and billing. The database supports essential hospital activities like appointment scheduling, clinical staff assignment, and payment tracking.
 
 ## Objective
 The main objective of this design is to create a relational database that ensures data integrity, reduces redundancy, and supports efficient retrieval of medical and financial information. The system is structured so that each patient, doctor, appointment, and bill is recorded in a way that is consistent and auditable.
@@ -29,7 +29,7 @@ The schema includes primary keys, foreign keys, and validation rules to maintain
 - Unique constraints prevent duplicate department names.
 
 ## Benefits of the Design
-This database design is suitable for a hospital management system because it:
+This database design is suitable for a MIVACARE HOSPITAL management system because it:
 - organizes operational data clearly,
 - avoids duplication of patient and doctor records,
 - makes reporting easier through structured relationships,
@@ -45,4 +45,4 @@ The database supports useful queries such as:
 - checking scheduled appointments for specific dates.
 
 ## Conclusion
-The Hospital Management System database is a practical and scalable design for managing core hospital processes. It balances normalization, integrity, and usability, making it suitable for both academic portfolio use and real-world adaptation.
+The MIVACARE HOSPITAL Management System database is a practical and scalable design for managing core hospital processes. It balances normalization, integrity, and usability, making it suitable for both academic portfolio use and real-world adaptation.

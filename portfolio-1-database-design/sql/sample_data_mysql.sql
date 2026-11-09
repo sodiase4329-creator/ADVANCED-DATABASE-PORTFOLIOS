@@ -1,4 +1,4 @@
--- Sample data for Hospital Management System (SQLite)
+-- Sample data for MIVACARE HOSPITAL Management System (MySQL)
 
 INSERT INTO Departments (DeptID, DeptName) VALUES
     (1, 'Cardiology'),

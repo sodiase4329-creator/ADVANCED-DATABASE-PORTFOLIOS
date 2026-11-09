@@ -1,50 +1,61 @@
-# Alali_John_Boma_2026AMIT0094_AdvancedDatabasePortfolio
+# MIVACARE HOSPITAL – Advanced Database Portfolio
 
-Hospital Management System portfolio for MIT 8103 Advanced Database Systems CA (MIVA Open University, 2026/2027). This project includes the database schema, sample records, and supporting notes for the hospital management system design.
-## Case Study
-Case Study: EverGreen General Hospital — a healthcare system designed to manage patients, doctors, appointments, billing, and departments.
-## Portfolio 1: Database Design
-This project models a Hospital Management System with the following main entities:
-- Departments
-- Doctors
-- Patients
-- Appointments
-- Billing
-## Included Files
-- [schema.sql](schema.sql) — PostgreSQL schema
-- [schema_mysql.sql](schema_mysql.sql) — MySQL schema
-- [schema_sqlserver.sql](schema_sqlserver.sql) — SQL Server schema
-- [schema_sqlite.sql](schema_sqlite.sql) — SQLite schema
-- [schema_notes.md](schema_notes.md) — Design explanation and entity relationships
-- [ER_Diagram.md](ER_Diagram.md) — ER diagram in Mermaid format
-- [sample_data_postgresql.sql](sample_data_postgresql.sql) — PostgreSQL sample inserts
-- [sample_data_mysql.sql](sample_data_mysql.sql) — MySQL sample inserts
-- [sample_data_sqlserver.sql](sample_data_sqlserver.sql) — SQL Server sample inserts
-- [sample_data_sqlite.sql](sample_data_sqlite.sql) — SQLite sample inserts
-- [hospital_queries.sql](hospital_queries.sql) — common SQL queries for reporting and analysis
-- [transaction_example.sql](transaction_example.sql) — example transaction for payment processing
-- [portfolio_submission.md](portfolio_submission.md) — polished portfolio summary for submission
-## Portfolio Activities
-- **Portfolio 1: Database Design and Modelling**
-  - Files: schema_mysql.sql, schema_postgresql.sql, ER_Diagram.md
-  - Evidence: ERDiagram.png (ER diagram screenshot)
+**Course:** MIT 8103 Advanced Database Systems – First Semester CA, 2026/2027 (MIVA Open University)
+**Student:** Alali John Boma (2026AMIT0094)
+**Assessment:** Individual Practical Database Portfolio (40 marks)
 
-- **Portfolio 2: Query Processing and Optimisation**
-  - File: hospital_queries.sql
-  - Evidence: Execution plan screenshot (query plan in MySQL Workbench)
+## Selected case study / organisation
+| | |
+|---|---|
+| **Organisation** | MIVACARE HOSPITAL (simulated general hospital) |
+| **Nature of system** | Hospital Management System for outpatient appointments and billing |
+| **Users** | Receptionists, doctors, billing officers, hospital administrators |
+| **Major data** | Departments, doctors, patients, appointments, billing records (plus patient documents in NoSQL) |
+| **Key operations** | Register patient, book appointment, retrieve patient history, record payment, revenue reporting |
 
-- **Portfolio 3: Transactions and Concurrency**
-  - File: transaction_example.sql
-  - Evidence: Commit/Rollback screenshot (transaction test in MySQL Workbench)
-  
-  -  **Portfolio 4: NoSQL and Advanced Data Models**
-  - File: nosql_patient.json
-  - Evidence: Patient record in JSON format (see Word doc for screenshot)
-## ER Diagram
-See [ER_Diagram.md](ER_Diagram.md) for the Mermaid ER diagram and relationship overview.
+The same case study is used in all five portfolio activities.
 
-## Notes
-This schema ensures referential integrity, supports appointment tracking, and allows billing information to be linked to each medical consultation. It can be extended later to include pharmacy, prescriptions, wards, and staff management.
+## Repository structure
+```
+advanced-database-portfolio/
+├── portfolio-1-database-design/        ER diagram, schemas (MySQL/PostgreSQL/SQL Server/SQLite), sample data, notes
+├── portfolio-2-query-optimisation/     queries, benchmark script, execution plans, results
+├── portfolio-3-transactions-concurrency/  commit/rollback, isolation, locking, deadlock
+├── portfolio-4-nosql/                  MongoDB documents, commands, key-value/graph examples
+├── portfolio-5-distributed-cloud/      replication, sharding, availability, cloud design
+├── docs/                               final documentation and schema summary
+├── screenshots/                        evidence screenshots (add yours here)
+└── README.md
+```
+
+## Portfolio summary
+| # | Activity | Where | Status |
+|---|---|---|---|
+| 1 | Database Design and Modelling | [portfolio-1-database-design](portfolio-1-database-design/) | ER diagram, schema, constraints, normalisation |
+| 2 | Query Processing and Optimisation | [portfolio-2-query-optimisation](portfolio-2-query-optimisation/) | 8 queries, execution plans, before/after index timings |
+| 3 | Transactions and Concurrency | [portfolio-3-transactions-concurrency](portfolio-3-transactions-concurrency/) | Commit, rollback, savepoint, locking, isolation |
+| 4 | NoSQL and Advanced Data Models | [portfolio-4-nosql](portfolio-4-nosql/) | MongoDB document model |
+| 5 | Distributed and Cloud Database | [portfolio-5-distributed-cloud](portfolio-5-distributed-cloud/) | Replication, sharding, CAP discussion, cloud design |
+| – | Final documentation | [docs/](docs/) | 2–3 page summary and reflection |
+
+## How each activity was tested
+- **SQLite scripts** (`schema_sqlite.sql`, `sample_data_sqlite.sql`, all queries, both Python demos) were executed and their outputs are saved in `portfolio-2.../results/` and `portfolio-3.../results/`.
+- **MySQL scripts** (primary platform for screenshots) – run them in MySQL Workbench and save screenshots in `screenshots/`.
+- **MongoDB, replication and sharding files** are provided as design/setup files; run them on your own instance and add screenshots.
+
+## Screenshot checklist (to add before submission)
+- [ ] `screenshots/p1-er-diagram.png`, `p1-tables-created.png`
+- [ ] `screenshots/p2-explain-before-index.png`, `p2-explain-after-index.png`
+- [ ] `screenshots/p3-commit.png`, `p3-rollback.png`, `p3-two-session-lock.png`
+- [ ] `screenshots/p4-mongo-find.png`, `p4-mongo-aggregate.png`
+- [ ] `screenshots/p5-replica-status.png` (or cloud console)
+
 ## AI Use Declaration
-Microsoft Copilot was used as a guide for structuring queries, schema design, and documentation.  
-All outputs were tested and verified manually in MySQL Workbench.
+Microsoft Copilot was used as a guide for structuring queries, schema design and documentation. All outputs were tested and verified manually in MySQL Workbench.
+Claude (Anthropic) was used to reorganise the repository, write the benchmark and transaction demo scripts, and draft documentation. Scripts were executed and outputs reviewed; the student is responsible for understanding and verifying all submitted work.
+*(Edit this declaration so it reflects exactly what you used and how you checked it.)*
+
+## References
+- MySQL 8.0 Reference Manual – InnoDB locking and transaction isolation levels.
+- SQLite documentation – EXPLAIN QUERY PLAN.
+- MongoDB Manual – schema validation, aggregation, replication and sharding.

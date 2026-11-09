@@ -1,0 +1,61 @@
+MIVACARE HOSPITAL benchmark | SQLite 3.45.1 | rows: 20000 patients, 200 doctors, 100000 appointments, 100000 bills
+
+######## BEFORE indexes ########
+
+Q1 patient history (WHERE PatientID)
+  best of 5: 2.35 ms
+  plan: SCAN a
+  plan: SEARCH d USING INTEGER PRIMARY KEY (rowid=?)
+
+Q2 unpaid bills per patient
+  best of 5: 37.16 ms
+  plan: SCAN b
+  plan: SEARCH a USING INTEGER PRIMARY KEY (rowid=?)
+  plan: SEARCH p USING INTEGER PRIMARY KEY (rowid=?)
+  plan: USE TEMP B-TREE FOR GROUP BY
+  plan: USE TEMP B-TREE FOR ORDER BY
+
+Q3 revenue by department
+  best of 5: 50.54 ms
+  plan: SCAN b
+  plan: SEARCH a USING INTEGER PRIMARY KEY (rowid=?)
+  plan: SEARCH d USING INTEGER PRIMARY KEY (rowid=?)
+  plan: SEARCH dep USING INTEGER PRIMARY KEY (rowid=?)
+  plan: USE TEMP B-TREE FOR GROUP BY
+
+Q4 scheduled appts on a date
+  best of 5: 3.97 ms
+  plan: SCAN Appointments
+
+######## AFTER indexes ########
+
+Q1 patient history (WHERE PatientID)
+  best of 5: 0.00 ms
+  plan: SEARCH a USING INDEX idx_appointments_patientid (PatientID=?)
+  plan: SEARCH d USING INTEGER PRIMARY KEY (rowid=?)
+
+Q2 unpaid bills per patient
+  best of 5: 55.70 ms
+  plan: SCAN p
+  plan: SEARCH a USING COVERING INDEX idx_appointments_patientid (PatientID=?)
+  plan: BLOOM FILTER ON b (AppointmentID=?)
+  plan: SEARCH b USING INDEX sqlite_autoindex_Billing_1 (AppointmentID=?)
+  plan: USE TEMP B-TREE FOR ORDER BY
+
+Q3 revenue by department
+  best of 5: 77.75 ms
+  plan: SCAN dep USING COVERING INDEX sqlite_autoindex_Departments_1
+  plan: SEARCH d USING COVERING INDEX idx_doctors_deptid (DeptID=?)
+  plan: SEARCH a USING COVERING INDEX idx_appointments_doctorid (DoctorID=?)
+  plan: SEARCH b USING INDEX sqlite_autoindex_Billing_1 (AppointmentID=?)
+
+Q4 scheduled appts on a date
+  best of 5: 0.04 ms
+  plan: SEARCH Appointments USING INDEX idx_appointments_date_status (AppointmentDate=? AND Status=?)
+
+######## SUMMARY (ms, best of 5) ########
+Query                                       Before     After  Speed-up
+Q1 patient history (WHERE PatientID)          2.35      0.00    581.2x
+Q2 unpaid bills per patient                  37.16     55.70      0.7x
+Q3 revenue by department                     50.54     77.75      0.6x
+Q4 scheduled appts on a date                  3.97      0.04    106.2x

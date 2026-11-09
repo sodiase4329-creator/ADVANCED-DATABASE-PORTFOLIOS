@@ -1,4 +1,4 @@
--- Hospital Management System Schema
+-- MIVACARE HOSPITAL Management System Schema
 -- MySQL-compatible SQL script
 
 DROP TABLE IF EXISTS Billing;

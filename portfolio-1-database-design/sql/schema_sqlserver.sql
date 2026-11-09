@@ -1,4 +1,4 @@
--- Hospital Management System Schema
+-- MIVACARE HOSPITAL Management System Schema
 -- SQL Server-compatible SQL script
 
 IF OBJECT_ID('Billing', 'U') IS NOT NULL DROP TABLE Billing;

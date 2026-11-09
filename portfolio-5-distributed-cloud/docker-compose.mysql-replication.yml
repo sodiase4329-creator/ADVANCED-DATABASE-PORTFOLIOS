@@ -1,0 +1,15 @@
+# MIVACARE HOSPITAL - Portfolio 5: MySQL primary + read replica (GTID replication)
+# Start: docker compose -f docker-compose.mysql-replication.yml up -d
+# Then run replication_setup.sql on the replica.
+services:
+  mysql-primary:
+    image: mysql:8.0
+    command: --server-id=1 --log-bin=mysql-bin --gtid-mode=ON --enforce-gtid-consistency=ON
+    environment: { MYSQL_ROOT_PASSWORD: rootpass, MYSQL_DATABASE: mivacare_hospital }
+    ports: ["3307:3306"]
+  mysql-replica:
+    image: mysql:8.0
+    command: --server-id=2 --relay-log=relay-bin --gtid-mode=ON --enforce-gtid-consistency=ON --read-only=ON
+    environment: { MYSQL_ROOT_PASSWORD: rootpass }
+    ports: ["3308:3306"]
+    depends_on: [mysql-primary]

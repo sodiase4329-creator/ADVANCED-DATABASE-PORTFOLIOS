@@ -1,4 +1,4 @@
--- Sample data for Hospital Management System (PostgreSQL)
+-- Sample data for MIVACARE HOSPITAL Management System (SQLite)
 
 INSERT INTO Departments (DeptID, DeptName) VALUES
     (1, 'Cardiology'),

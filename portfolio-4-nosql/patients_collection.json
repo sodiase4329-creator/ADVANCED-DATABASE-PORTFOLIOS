@@ -1,0 +1,143 @@
+[
+  {
+    "_id": "P001",
+    "name": "John Smith",
+    "dob": "1988-04-15",
+    "contact": {
+      "email": "john.smith@gmail.com",
+      "phone": "+1234567890"
+    },
+    "appointments": [
+      {
+        "appointmentId": 1,
+        "date": "2026-10-01",
+        "status": "Completed",
+        "doctor": {
+          "id": 1,
+          "name": "Dr. Anna Mensah",
+          "specialty": "Cardiologist"
+        },
+        "department": "Cardiology",
+        "bill": {
+          "billId": 1,
+          "amount": 2500.0,
+          "currency": "NGN",
+          "paymentStatus": "Paid"
+        }
+      }
+    ],
+    "medicalHistory": [
+      {
+        "condition": "Hypertension",
+        "diagnosedOn": "2022-05-10",
+        "medications": [
+          "Amlodipine",
+          "Lisinopril"
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "P002",
+    "name": "Mary Johnson",
+    "dob": "1995-08-22",
+    "contact": {
+      "email": "mary.johnson@gmail.com",
+      "phone": "+1234567891"
+    },
+    "appointments": [
+      {
+        "appointmentId": 2,
+        "date": "2026-10-02",
+        "status": "Scheduled",
+        "doctor": {
+          "id": 2,
+          "name": "Dr. Peter Adebayo",
+          "specialty": "Pediatrician"
+        },
+        "department": "Pediatrics",
+        "bill": {
+          "billId": 2,
+          "amount": 1800.0,
+          "currency": "NGN",
+          "paymentStatus": "Pending"
+        }
+      }
+    ],
+    "medicalHistory": []
+  },
+  {
+    "_id": "P003",
+    "name": "Samuel Okafor",
+    "dob": "2012-01-10",
+    "contact": {
+      "email": "samuel.okafor@gmail.com",
+      "phone": "+1234567892"
+    },
+    "appointments": [
+      {
+        "appointmentId": 3,
+        "date": "2026-10-03",
+        "status": "Completed",
+        "doctor": {
+          "id": 2,
+          "name": "Dr. Peter Adebayo",
+          "specialty": "Pediatrician"
+        },
+        "department": "Pediatrics",
+        "bill": {
+          "billId": 3,
+          "amount": 1200.0,
+          "currency": "NGN",
+          "paymentStatus": "Paid"
+        }
+      }
+    ],
+    "medicalHistory": [
+      {
+        "condition": "Asthma",
+        "diagnosedOn": "2019-03-02",
+        "medications": [
+          "Salbutamol"
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "P004",
+    "name": "Grace Boma",
+    "dob": "1976-11-30",
+    "contact": {
+      "email": "grace.boma@gmail.com",
+      "phone": "+1234567893"
+    },
+    "appointments": [
+      {
+        "appointmentId": 4,
+        "date": "2026-10-04",
+        "status": "Cancelled",
+        "doctor": {
+          "id": 4,
+          "name": "Dr. Linda Thompson",
+          "specialty": "Emergency Physician"
+        },
+        "department": "Emergency Medicine",
+        "bill": {
+          "billId": 4,
+          "amount": 0.0,
+          "currency": "NGN",
+          "paymentStatus": "Refunded"
+        }
+      }
+    ],
+    "medicalHistory": [
+      {
+        "condition": "Type 2 Diabetes",
+        "diagnosedOn": "2021-11-02",
+        "medications": [
+          "Metformin"
+        ]
+      }
+    ]
+  }
+]

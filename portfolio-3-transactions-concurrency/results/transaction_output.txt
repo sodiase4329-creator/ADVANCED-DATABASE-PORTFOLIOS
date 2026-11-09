@@ -1,0 +1,21 @@
+MIVACARE HOSPITAL - transaction demo
+
+1. COMMIT - pay bill for appointment 2
+   after COMMIT: [('Completed',)] [('Paid',)]
+
+2. ROLLBACK - doubled amount is undone
+   inside txn : [(5000.0,)]
+   after ROLLBACK: [(2500.0,)]
+
+3. Atomicity - constraint failure rolls back the whole unit of work
+   error: CHECK constraint failed: Amount >= 0
+   appointment 3 status after rollback: [('Completed',)]
+
+4. SAVEPOINT - partial rollback
+   bill 4 status: [('Paid',)]
+
+5. Concurrency - two sessions pay the same pending bill
+   session B blocked while A holds the write lock: 'database is locked'
+   session B conditional update affected 0 row(s) -> duplicate payment prevented
+
+All demos completed.

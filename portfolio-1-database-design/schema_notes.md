@@ -1,7 +1,7 @@
-# Hospital Management System – Schema Notes
+# MIVACARE HOSPITAL Management System – Schema Notes
 
 ## Overview
-This database schema models a hospital management system that tracks departments, doctors, patients, appointments, and billing. It is designed to maintain data integrity, support efficient queries, and represent real-world hospital operations.
+This database schema models a MIVACARE HOSPITAL management system that tracks departments, doctors, patients, appointments, and billing. It is designed to maintain data integrity, support efficient queries, and represent real-world hospital operations.
 
 ---
 

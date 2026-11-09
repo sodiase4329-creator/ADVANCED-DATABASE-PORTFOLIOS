@@ -1,4 +1,4 @@
-# Hospital Management System ER Diagram
+# MIVACARE HOSPITAL Management System ER Diagram
 
 ```mermaid
 erDiagram

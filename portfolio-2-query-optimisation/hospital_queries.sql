@@ -1,4 +1,4 @@
--- Hospital Management System Query Examples
+-- MIVACARE HOSPITAL Management System Query Examples
 -- These queries demonstrate common reporting and data retrieval tasks.
 
 -- 1. View all departments and their doctors
@@ -62,7 +62,7 @@ JOIN Departments d ON doc.DeptID = d.DeptID
 GROUP BY d.DeptName
 ORDER BY TotalRevenue DESC;
 
--- 8. Find all scheduled appointments for today (example date)
+-- 8. Find all scheduled appointments on a given date (example date)
 SELECT *
 FROM Appointments
-WHERE AppointmentDate = '2026-10-04' AND Status = 'Scheduled';
+WHERE AppointmentDate = '2026-10-02' AND Status = 'Scheduled';
