@@ -12,4 +12,7 @@
 - **Sharding:** if patient volume outgrows one server, shard `patients` on a hashed `_id` to spread data and writes evenly. Sharding by appointment date would create hot shards.
 - **Cloud deployment:** a managed service such as Amazon RDS for MySQL (Multi-AZ plus read replicas) or MongoDB Atlas removes patching and backup work. Hospital data is sensitive, so use encryption at rest and in transit, private networking and role-based access.
 
-These configurations are provided as design and setup files. They were not executed in this environment, so add your own deployment screenshots (for example `SHOW REPLICA STATUS`) before submitting.
+These configurations are provided as design and setup files. They were not executed in this environment, so they are presented as design material.
+
+## Evidence
+No screenshots yet: these files were written as design/setup material and have not been executed.

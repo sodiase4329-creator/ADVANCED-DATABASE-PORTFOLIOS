@@ -15,7 +15,8 @@ db.createCollection("patients", {
     } } }
 });
 
-db.patients.insertMany(JSON.parse(cat("patients_collection.json")));   // mongosh: cat() reads the file
+// Load the data with mongoimport (or Compass > Import) instead of cat():
+//   mongoimport --db mivacare_hospital --collection patients --file patients_collection.json --jsonArray
 
 // 1. Retrieve full patient history in ONE read (no joins)
 db.patients.findOne({ _id: "P001" });

@@ -22,5 +22,10 @@
 - Q2 and Q3 aggregate most of the table, so indexes cannot skip much work. The planner switched join order and was slightly slower on this data. Timings are from one machine and an in-memory database, so treat them as indicative; re-run `EXPLAIN` in MySQL Workbench on your own data.
 - Trade-off: each index costs storage and slows INSERT/UPDATE, so index the columns used in frequent WHERE/JOIN clauses, not everything.
 
-## MySQL evidence to add
-Run `EXPLAIN` / `EXPLAIN ANALYZE` on queries 2, 4 and 6 in MySQL Workbench and save screenshots in `../screenshots/` (see checklist in the root README).
+## Evidence images (SQLite output)
+![p2-query-results.png](../screenshots/p2-query-results.png)
+![p2-explain-before-index.png](../screenshots/p2-explain-before-index.png)
+![p2-explain-after-index.png](../screenshots/p2-explain-after-index.png)
+![p2-performance-summary.png](../screenshots/p2-performance-summary.png)
+
+These are from SQLite, not MySQL; running `EXPLAIN` in MySQL Workbench would give the equivalent for MySQL.

@@ -32,3 +32,6 @@ SOURCE sql/schema_mysql.sql;
 SOURCE sql/sample_data_mysql.sql;
 ```
 Tested here by running the SQLite versions end-to-end; MySQL/PostgreSQL/SQL Server scripts were not executed in this environment.
+
+## Evidence
+![p1-schema-and-data.png](../screenshots/p1-schema-and-data.png)

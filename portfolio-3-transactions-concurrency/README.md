@@ -16,3 +16,8 @@
 6. **Isolation levels** – READ COMMITTED vs REPEATABLE READ, and an InnoDB deadlock (MySQL, two sessions).
 
 The SQLite demo was executed and its output is saved. `concurrency_mysql.sql` is a step-by-step script for two MySQL Workbench tabs; take screenshots of your own runs.
+
+## Evidence images (SQLite output)
+![p3-commit-rollback.png](../screenshots/p3-commit-rollback.png)
+![p3-atomicity-savepoint.png](../screenshots/p3-atomicity-savepoint.png)
+![p3-concurrency.png](../screenshots/p3-concurrency.png)

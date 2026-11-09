@@ -40,15 +40,13 @@ advanced-database-portfolio/
 
 ## How each activity was tested
 - **SQLite scripts** (`schema_sqlite.sql`, `sample_data_sqlite.sql`, all queries, both Python demos) were executed and their outputs are saved in `portfolio-2.../results/` and `portfolio-3.../results/`.
-- **MySQL scripts** (primary platform for screenshots) – run them in MySQL Workbench and save screenshots in `screenshots/`.
-- **MongoDB, replication and sharding files** are provided as design/setup files; run them on your own instance and add screenshots.
+- **MySQL scripts** were written for MySQL 8 but were not executed in this environment.
+- **MongoDB, replication and sharding files** are provided as design/setup files; not run, so no screenshots exist for them.
 
-## Screenshot checklist (to add before submission)
-- [ ] `screenshots/p1-er-diagram.png`, `p1-tables-created.png`
-- [ ] `screenshots/p2-explain-before-index.png`, `p2-explain-after-index.png`
-- [ ] `screenshots/p3-commit.png`, `p3-rollback.png`, `p3-two-session-lock.png`
-- [ ] `screenshots/p4-mongo-find.png`, `p4-mongo-aggregate.png`
-- [ ] `screenshots/p5-replica-status.png` (or cloud console)
+## Evidence images
+Real script output is rendered as images in [screenshots/](screenshots/) (schema, query results, execution plans before/after indexing, performance summary, commit/rollback, atomicity, concurrency). They are captioned as **SQLite output**, not MySQL Workbench. Regenerate with `python3 screenshots/render_evidence.py`.
+
+Not included: MongoDB, replication and cloud screenshots (those files were written but not executed). Add your own MySQL Workbench or MongoDB screenshots to `screenshots/` if you have them.
 
 ## AI Use Declaration
 Microsoft Copilot was used as a guide for structuring queries, schema design and documentation. All outputs were tested and verified manually in MySQL Workbench.

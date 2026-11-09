@@ -15,3 +15,6 @@ Document model (MongoDB). Each patient is one document with **embedded** appoint
 - **Trade-offs:** doctor details are duplicated inside appointments (update anomalies), and cross-patient reports need aggregation. This is why the relational design remains the system of record for billing, and MongoDB serves as a read-optimised patient view.
 
 Both JSON files were validated as well-formed JSON. The MongoDB script was written but not executed in this environment; run it with `mongosh` and screenshot the output.
+
+## Evidence
+No screenshots yet: these files were written as design/setup material and have not been executed.
